@@ -17,7 +17,7 @@ import UIKit
    @objc optional func collectionView(_ pageCollectionView: ZFPageCollectionView, _ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath)
 }
 
-class ZFPageCollectionView: UIView {
+public class ZFPageCollectionView: UIView {
     weak var dataSource: ZFPageCollectionViewDataSource?
     weak var delegate: ZFPageCollectionViewDelegate?
     fileprivate var titles = [String]()
@@ -37,7 +37,7 @@ class ZFPageCollectionView: UIView {
         setupUI()
     }
     
-    required init?(coder aDecoder: NSCoder) {
+    required public init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
 
@@ -95,18 +95,18 @@ extension ZFPageCollectionView {
 
 //MARK:- 数据源
 extension ZFPageCollectionView:  UICollectionViewDataSource {
-    func numberOfSections(in collectionView: UICollectionView) -> Int {
+    public func numberOfSections(in collectionView: UICollectionView) -> Int {
         
         return dataSource?.numberOfSections(in: self) ?? 0
     }
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+    public func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         let itemCount = dataSource?.collectionView(self, numberOfItemsInSection: section) ?? 0
         if section == 0 {
             updatePageControl(section: section)
         }
         return itemCount
     }
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+    public func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
         return dataSource?.collectionView!(self, collectionView, cellForItemAt: indexPath) ?? UICollectionViewCell()
     }
@@ -116,15 +116,15 @@ extension ZFPageCollectionView:  UICollectionViewDataSource {
 //MARK:- 滑动点击事件响应
 extension ZFPageCollectionView: UICollectionViewDelegate, ZFTitleViewDelegate {
     
-    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+    public func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         delegate?.collectionView!(self, collectionView, didSelectItemAt: indexPath)
     }
     
     // 调整PageControl
-    func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
+    public func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
         scrollViewEndScroll()
     }
-    func scrollViewDidEndDragging(_ scrollView: UIScrollView, willDecelerate decelerate: Bool) {
+    public func scrollViewDidEndDragging(_ scrollView: UIScrollView, willDecelerate decelerate: Bool) {
         if !decelerate {
             scrollViewEndScroll()
         }

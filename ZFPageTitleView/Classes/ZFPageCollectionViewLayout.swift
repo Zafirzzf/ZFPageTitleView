@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ZFPageCollectionViewLayout: UICollectionViewFlowLayout {
+public class ZFPageCollectionViewLayout: UICollectionViewFlowLayout {
 
     fileprivate var attributes = [UICollectionViewLayoutAttributes]()
     var cols = 4
@@ -17,7 +17,7 @@ class ZFPageCollectionViewLayout: UICollectionViewFlowLayout {
 }
 
 extension ZFPageCollectionViewLayout {
-    override func prepare() {
+    override public func prepare() {
         super.prepare()
         
         let itemW = (collectionView!.bounds.width - sectionInset.left - sectionInset.right - minimumInteritemSpacing * CGFloat(cols - 1)) / CGFloat(cols)
@@ -45,11 +45,11 @@ extension ZFPageCollectionViewLayout {
 }
 
 extension ZFPageCollectionViewLayout {
-    override func layoutAttributesForElements(in rect: CGRect) -> [UICollectionViewLayoutAttributes]? {
+    override public func layoutAttributesForElements(in rect: CGRect) -> [UICollectionViewLayoutAttributes]? {
         return attributes
     }
     
-    override var collectionViewContentSize: CGSize {
+    override public var collectionViewContentSize: CGSize {
         return CGSize(width: maxWidth, height: collectionView!.bounds.height)
     }
 }

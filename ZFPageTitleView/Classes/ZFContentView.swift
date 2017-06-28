@@ -7,7 +7,7 @@
 //
 
 import UIKit
-protocol ZFContentViewDelegate: class {
+public protocol ZFContentViewDelegate: class {
     func contentView(_ contentView: ZFContentView, targetIndex: Int, progress: CGFloat)
     func contentView(_ contentView: ZFContentView, endScroll Index: Int)
 }
@@ -15,7 +15,7 @@ protocol ZFContentViewDelegate: class {
 
 
 fileprivate let cellID = "cellID"
-class ZFContentView: UIView {
+public class ZFContentView: UIView {
     weak var delegate: ZFContentViewDelegate?
     var isForbidDelegate: Bool = true // 防止点击标题触发滚动代理
     fileprivate var scrollStartOffSet: CGFloat = 0
@@ -44,7 +44,7 @@ class ZFContentView: UIView {
         setupUI()
     }
     
-    required init?(coder aDecoder: NSCoder) {
+    required public init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
 
@@ -60,12 +60,12 @@ extension ZFContentView {
 }
 
 //MARK:- 数据源
-extension ZFContentView: UICollectionViewDataSource {
+extension  ZFContentView: UICollectionViewDataSource {
 
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+    public func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return childVC.count
     }
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+    public func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellID, for: indexPath)
         // 注意删除之前cell上的view
         _ = cell.contentView.subviews.map{ $0.removeFromSuperview() }
@@ -82,12 +82,12 @@ extension ZFContentView: UICollectionViewDataSource {
 //MARK:- ScrollView 代理
 extension ZFContentView: UICollectionViewDelegate {
 
-    func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
+    public func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
         
         delegate?.contentView(self, endScroll:Int(scrollView.contentOffset.x / bounds.width))
     }
 
-    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+    public func scrollViewDidScroll(_ scrollView: UIScrollView) {
         if isForbidDelegate { return }
         
         let offsetX = scrollView.contentOffset.x
@@ -110,7 +110,7 @@ extension ZFContentView: UICollectionViewDelegate {
         delegate?.contentView(self, targetIndex: targetIndex, progress: progress)
     }
     
-    func scrollViewWillBeginDragging(_ scrollView: UIScrollView) {
+    public func scrollViewWillBeginDragging(_ scrollView: UIScrollView) {
         isForbidDelegate = false
         scrollStartOffSet = scrollView.contentOffset.x
     }

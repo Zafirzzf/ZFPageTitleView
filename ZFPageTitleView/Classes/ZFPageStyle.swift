@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ZFPageStyle: NSObject {
+public class ZFPageStyle: NSObject {
     var titleViewBackColor = UIColor.white.withAlphaComponent(0.5)    /// 标题视图背景颜色
     
     var collectionViewBackColor = UIColor(colorLiteralRed: 246/255.0, green: 246/255.0, blue: 248/255.0, alpha: 1)
