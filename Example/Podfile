@@ -1,0 +1,11 @@
+use_frameworks!
+
+target 'ZFPageTitleView_Example' do
+  pod 'ZFPageTitleView', :path => '../'
+
+  target 'ZFPageTitleView_Tests' do
+    inherit! :search_paths
+
+    
+  end
+end
