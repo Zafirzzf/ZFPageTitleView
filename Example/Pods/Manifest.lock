@@ -1,0 +1,16 @@
+PODS:
+  - ZFPageTitleView (0.1.0)
+
+DEPENDENCIES:
+  - ZFPageTitleView (from `../`)
+
+EXTERNAL SOURCES:
+  ZFPageTitleView:
+    :path: "../"
+
+SPEC CHECKSUMS:
+  ZFPageTitleView: 03b3cdde4d4c9f02d6468ddaf5217926b6061ae3
+
+PODFILE CHECKSUM: ee237910c8ed5a7c4139c86f567780e9f657be51
+
+COCOAPODS: 1.2.1

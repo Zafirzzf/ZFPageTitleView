@@ -1,0 +1,6 @@
+framework module ZFPageTitleView {
+  umbrella header "ZFPageTitleView-umbrella.h"
+
+  export *
+  module * { export * }
+}
