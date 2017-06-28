@@ -18,7 +18,7 @@ Pod::Spec.new do |s|
 #   * Finally, don't worry about the indent, CocoaPods strips it!
 
   s.description      = <<-DESC
-    标题选项卡
+    标题选项卡,FM项目首页的一个功能组件
     DESC
 
   s.homepage         = 'https://github.com/Zafirzzf/ZFPageTitleView'
