@@ -9,14 +9,16 @@
 import UIKit
 
 
-class ZFPageView: UIView {
+public class ZFPageView: UIView {
+
     
     fileprivate let titles: [String]
     fileprivate let titleStyle: ZFPageStyle
     fileprivate let childControllers: [UIViewController]
     fileprivate let parentVC: UIViewController
     
-    init(frame: CGRect, titles: [String], childControllers: [UIViewController], parentVC: UIViewController,style: ZFPageStyle = ZFPageStyle()) {
+    public init(frame: CGRect, titles: [String], childControllers: [UIViewController], parentVC: UIViewController,style: ZFPageStyle = ZFPageStyle()) {
+
         self.titleStyle = style
         self.titles = titles
         self.childControllers = childControllers
@@ -27,7 +29,8 @@ class ZFPageView: UIView {
         
     }
     
-    required init?(coder aDecoder: NSCoder) {
+    required public init?(coder aDecoder: NSCoder) {
+
         fatalError("init(coder:) has not been implemented")
     }
     

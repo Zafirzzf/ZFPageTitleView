@@ -28,12 +28,14 @@ public class ZFPageCollectionView: UIView {
     fileprivate var collectionView: UICollectionView!
     fileprivate var pageControl: UIPageControl!
     fileprivate var titleView: ZFTitleView!
-    init(frame: CGRect, titles: [String], style: ZFPageStyle, isTitleInTop: Bool, layout: ZFPageCollectionViewLayout) {
+    public init(frame: CGRect, titles: [String], style: ZFPageStyle, isTitleInTop: Bool, layout: ZFPageCollectionViewLayout) {
+
         self.titles = titles
         self.style = style
         self.isTitleInTop = isTitleInTop
         self.layout = layout
         super.init(frame: frame)
+
         setupUI()
     }
     
@@ -147,7 +149,8 @@ extension ZFPageCollectionView: UICollectionViewDelegate, ZFTitleViewDelegate {
         }
     }
     // 点击了标题
-    func titleView(_ titleView: ZFTitleView, didSelected selectIndex: Int) {
+    public func titleView(_ titleView: ZFTitleView, didSelected selectIndex: Int) {
+
         let indexPath = IndexPath(item: 0, section: selectIndex)
         currentIndexPath = indexPath
         collectionView.scrollToItem(at: indexPath, at: .left, animated: false)

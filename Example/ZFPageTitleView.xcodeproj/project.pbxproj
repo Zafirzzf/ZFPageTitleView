@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		18F7C0BD1F5D5105001F75A1 /* UIColor+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18F7C0BC1F5D5105001F75A1 /* UIColor+extension.swift */; };
 		3E499CC18E983FC51BD256A3 /* Pods_ZFPageTitleView_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5A64FB9FC2CD76B74DED8639 /* Pods_ZFPageTitleView_Tests.framework */; };
 		607FACD61AFB9204008FA782 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACD51AFB9204008FA782 /* AppDelegate.swift */; };
 		607FACD81AFB9204008FA782 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACD71AFB9204008FA782 /* ViewController.swift */; };
@@ -28,7 +29,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		46C40082E6779AC62A88144D /* ZFPageTitleView.podspec */ = {isa = PBXFileReference; includeInIndex = 1; name = ZFPageTitleView.podspec; path = ../ZFPageTitleView.podspec; sourceTree = "<group>"; };
+		18F7C0BC1F5D5105001F75A1 /* UIColor+extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+extension.swift"; sourceTree = "<group>"; };
+		46C40082E6779AC62A88144D /* ZFPageTitleView.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = ZFPageTitleView.podspec; path = ../ZFPageTitleView.podspec; sourceTree = "<group>"; };
 		5A64FB9FC2CD76B74DED8639 /* Pods_ZFPageTitleView_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ZFPageTitleView_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		607FACD01AFB9204008FA782 /* ZFPageTitleView_Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ZFPageTitleView_Example.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		607FACD41AFB9204008FA782 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -43,9 +45,9 @@
 		6337A6E42C316E8E6C1927AB /* Pods-ZFPageTitleView_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ZFPageTitleView_Tests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ZFPageTitleView_Tests/Pods-ZFPageTitleView_Tests.debug.xcconfig"; sourceTree = "<group>"; };
 		7FD095B4C34211E866F63D77 /* Pods-ZFPageTitleView_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ZFPageTitleView_Example.release.xcconfig"; path = "Pods/Target Support Files/Pods-ZFPageTitleView_Example/Pods-ZFPageTitleView_Example.release.xcconfig"; sourceTree = "<group>"; };
 		8AFAB2543855D7F780EFB1FF /* Pods-ZFPageTitleView_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ZFPageTitleView_Tests.release.xcconfig"; path = "Pods/Target Support Files/Pods-ZFPageTitleView_Tests/Pods-ZFPageTitleView_Tests.release.xcconfig"; sourceTree = "<group>"; };
-		C86C0F2F35FA2AE98A18A4B6 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; name = README.md; path = ../README.md; sourceTree = "<group>"; };
+		C86C0F2F35FA2AE98A18A4B6 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
 		D0314622CCB2693E42E93B85 /* Pods-ZFPageTitleView_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ZFPageTitleView_Example.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ZFPageTitleView_Example/Pods-ZFPageTitleView_Example.debug.xcconfig"; sourceTree = "<group>"; };
-		D3FA86E43226C963F6AD1954 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
+		D3FA86E43226C963F6AD1954 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
 		F19AF039AD7441ADD8FDF6E4 /* Pods_ZFPageTitleView_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ZFPageTitleView_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -94,6 +96,7 @@
 			isa = PBXGroup;
 			children = (
 				607FACD51AFB9204008FA782 /* AppDelegate.swift */,
+				18F7C0BC1F5D5105001F75A1 /* UIColor+extension.swift */,
 				607FACD71AFB9204008FA782 /* ViewController.swift */,
 				607FACD91AFB9204008FA782 /* Main.storyboard */,
 				607FACDC1AFB9204008FA782 /* Images.xcassets */,
@@ -361,6 +364,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				18F7C0BD1F5D5105001F75A1 /* UIColor+extension.swift in Sources */,
 				607FACD81AFB9204008FA782 /* ViewController.swift in Sources */,
 				607FACD61AFB9204008FA782 /* AppDelegate.swift in Sources */,
 			);

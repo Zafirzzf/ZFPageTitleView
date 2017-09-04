@@ -8,13 +8,15 @@
 
 import UIKit
 
-protocol ZFTitleViewDelegate: class{
+public protocol ZFTitleViewDelegate: class{
     func titleView(_ titleView: ZFTitleView, didSelected selectIndex: Int)
 }
 
-class ZFTitleView: UIView {
-    weak var delegage: ZFTitleViewDelegate?
-    fileprivate var style = ZFPageStyle()
+public class ZFTitleView: UIView {
+   open  weak var delegage: ZFTitleViewDelegate?
+    public var style = ZFPageStyle()
+
+
     fileprivate var titles: [String]
     fileprivate var titleLabels = [ZFTitleLabel]()
     var selectIndex = 0 {
@@ -31,15 +33,16 @@ class ZFTitleView: UIView {
     }()
     
     
-    init(frame: CGRect, style: ZFPageStyle, titles: [String]) {
+    public init(frame: CGRect, style: ZFPageStyle, titles: [String]) {
+
         self.style = style
         self.titles = titles
         super.init(frame: frame)
-        
         setupUI()
     }
     
-    required init?(coder aDecoder: NSCoder) {
+    required public init?(coder aDecoder: NSCoder) {
+
         fatalError("init(coder:) has not been implemented")
     }
 
@@ -102,18 +105,18 @@ extension ZFTitleView {
             }
             
         }
-//        //如果标题总长度不足屏幕宽,调整到居中
-//        if scrollView.contentSize.width < bounds.width {
-//            scrollView.isScrollEnabled = false
-//            let newFirstLabelX = (bounds.width + labelMargin - titleLabels.last!.frame.maxX) * 0.5
-//            var newLabelX = newFirstLabelX
-//            for label in titleLabels {
-//                let labelW = label.bounds.width
-//                let rect = CGRect(x: newLabelX, y: 0, width: labelW, height: bounds.height)
-//                label.frame = rect
-//                newLabelX += labelW + labelMargin
-//            }
-//        }
+        //如果标题总长度不足屏幕宽,调整到居中
+        if scrollView.contentSize.width < bounds.width {
+            scrollView.isScrollEnabled = false
+            let labelW = frame.width / CGFloat(titleLabels.count)
+            var newLabelX: CGFloat = 0
+            for label in titleLabels {
+                let rect = CGRect(x: newLabelX, y: 0, width: labelW, height: bounds.height)
+                label.frame = rect
+                newLabelX += labelW 
+            }
+        }
+
         
         titleLabels[0].select = true // 第一个选中
     }
@@ -149,7 +152,8 @@ extension ZFTitleView {
 
 //MARK:- ZFContentView滑动代理
 extension ZFTitleView: ZFContentViewDelegate {
-    func contentView(_ contentView: ZFContentView, endScroll Index: Int) {
+    public func contentView(_ contentView: ZFContentView, endScroll Index: Int) {
+
         selectIndex = Index
         //调整位置
         setScrollInset(titleLabels[selectIndex])
@@ -157,7 +161,8 @@ extension ZFTitleView: ZFContentViewDelegate {
       
         
     }
-    func contentView(_ contentView: ZFContentView, targetIndex: Int, progress: CGFloat) {
+    public func contentView(_ contentView: ZFContentView, targetIndex: Int, progress: CGFloat) {
+
         if progress > 0.9 {
             selectIndex = targetIndex
             //调整位置

@@ -118,7 +118,8 @@ extension ZFContentView: UICollectionViewDelegate {
 
 //MARK:- 标题视图代理
 extension ZFContentView: ZFTitleViewDelegate {
-    func titleView(_ titleView: ZFTitleView, didSelected selectIndex: Int) {
+    public func titleView(_ titleView: ZFTitleView, didSelected selectIndex: Int) {
+
         isForbidDelegate = true
         let targetIndexPath = IndexPath(item: selectIndex, section: 0)
         collectionView.scrollToItem(at: targetIndexPath, at: .left, animated: false)
