@@ -194,8 +194,6 @@ extension ZFTitleView: ZFContentViewDelegate {
                                      green: (normalColor.1 + excessColor.1 * progress) / 255.0,
                                      blue: (normalColor.2 + excessColor.2 * progress) / 255.0,
                                      alpha: 1)
-    
-        
     }
     
     

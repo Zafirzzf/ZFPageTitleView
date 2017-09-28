@@ -17,6 +17,14 @@ public class ZFPageView: UIView {
     fileprivate let childControllers: [UIViewController]
     fileprivate let parentVC: UIViewController
     
+    /// 构造函数
+    ///
+    /// - Parameters:
+    ///   - frame: 包含自控制器的整个frame
+    ///   - titles: 标题数组
+    ///   - childControllers: 内容控制器数组
+    ///   - parentVC: 装此控件的控制器
+    ///   - style: 界面主题色
     public init(frame: CGRect, titles: [String], childControllers: [UIViewController], parentVC: UIViewController,style: ZFPageStyle = ZFPageStyle()) {
 
         self.titleStyle = style

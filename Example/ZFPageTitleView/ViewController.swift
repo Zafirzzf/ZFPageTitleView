@@ -20,7 +20,10 @@ class ViewController: UIViewController {
             childVCs.append(testVC)
         }
         let style = ZFPageStyle()
+        style.textNormalColor = UIColor.red
+        style.titleViewBackColor = UIColor.purple
         let pageView = ZFPageView(frame: CGRect(x: 0, y: 40, width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height - 40), titles: ["推荐","热门","关注","发现"], childControllers: childVCs, parentVC: self)
+        
         view.addSubview(pageView)
     }
 

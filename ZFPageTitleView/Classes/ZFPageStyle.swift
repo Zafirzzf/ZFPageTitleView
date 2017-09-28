@@ -9,29 +9,28 @@
 import UIKit
 
 public class ZFPageStyle: NSObject {
-    var titleViewBackColor = UIColor.white.withAlphaComponent(0.5)    /// 标题视图背景颜色
+    open var titleViewBackColor = UIColor.white.withAlphaComponent(0.5)    /// 标题视图背景颜色
+    open var collectionViewBackColor = UIColor(red: 246/255.0, green: 246/255.0, blue: 248/255.0, alpha: 1)
     
-    var collectionViewBackColor = UIColor(colorLiteralRed: 246/255.0, green: 246/255.0, blue: 248/255.0, alpha: 1)
+    open var pageIndicatorTintColor = UIColor.gray
     
-    var pageIndicatorTintColor = UIColor.gray
+    open var currentPageIndicatorTintColor = UIColor.white
     
-    var currentPageIndicatorTintColor = UIColor.white
-    
-    var titleViewHeight: CGFloat = 32     /// 标题视图高度
+    open var titleViewHeight: CGFloat = 32     /// 标题视图高度
 
-    var scrollEnabled: Bool = true
+    open var scrollEnabled: Bool = true
     
-    var titleFont: UIFont = UIFont.systemFont(ofSize: 15)
+    open var titleFont: UIFont = UIFont.systemFont(ofSize: 15)
     
-    var fontTransformScale: CGFloat = 1.2  /// 标题放大时的比例
+    open var fontTransformScale: CGFloat = 1.2  /// 标题放大时的比例
 
-    var titleMargin: CGFloat = 20   //标题之间的间距
+    open var titleMargin: CGFloat = 20   //标题之间的间距
     
-    var textNormalColor =  UIColor(colorLiteralRed: 52/255.0, green: 53/255.0, blue: 54/255.0, alpha: 1)    /// 标题普通颜色
+    open var textNormalColor =  UIColor(red: 52/255.0, green: 53/255.0, blue: 54/255.0, alpha: 1)    /// 标题普通颜色
     
-    var textSelectColor = UIColor(colorLiteralRed: 255/255.0, green: 127/255.0, blue: 0, alpha: 1)   /// 标题选中颜色
+    open var textSelectColor = UIColor(red: 255/255.0, green: 127/255.0, blue: 0, alpha: 1)   /// 标题选中颜色
     
-    convenience init(_ textNormalColor: UIColor, _ textSelectColor: UIColor, _ backColor: UIColor){
+    public convenience init(_ textNormalColor: UIColor, _ textSelectColor: UIColor, _ backColor: UIColor){
         self.init()
         self.textNormalColor = textNormalColor
         self.textSelectColor = textSelectColor

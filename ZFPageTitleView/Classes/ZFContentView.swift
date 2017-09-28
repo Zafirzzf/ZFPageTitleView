@@ -74,7 +74,6 @@ extension  ZFContentView: UICollectionViewDataSource {
         childView.frame = cell.contentView.bounds
         cell.contentView.addSubview(childView)
         
-        
         return cell
     }
 }
